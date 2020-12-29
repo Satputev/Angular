@@ -1,0 +1,57 @@
+<!--
+  mat-elevation-z8 
+      - used to display the content with "shadow effect"
+-->
+<div class="mat-elevation-z8" align="center">
+    <!--
+        mat-table
+            - used to convert the normal table to material table
+
+        [dataSource]
+            - used to link the array to material table
+
+        matSort
+            - used to apply the sorting technique on table
+    -->
+    <table mat-table [dataSource]="dataSource" matSort>
+        <!--
+          in material table, we have multiple containers
+
+          <ng-container></ng-container> used to define the container
+
+          matColumnDef used to define the metadata
+        -->
+        <ng-container matColumnDef="p_id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                p_id
+            </th>
+            <td mat-cell *matCellDef="let row">
+                {{row.p_id}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="p_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                p_name
+            </th>
+            <td mat-cell *matCellDef="let row">
+                {{row.p_name}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="p_cost">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                p_cost
+            </th>
+            <td mat-cell *matCellDef="let row">
+                {{row.p_cost}}
+            </td>
+        </ng-container>
+
+        <!--map the columns-->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row;columns:displayedColumns">
+        </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[1,2,3,5]"></mat-paginator>
+</div>

@@ -1,0 +1,12 @@
+<fieldset>
+    <legend>Login</legend>
+    <label style="margin-right: 100px;">uname</label>
+    <input type="text" [(ngModel)]='uname' aria-label="uname"><br><br>
+
+    <label style="margin-right: 100px;">upwd</label>
+    <input type="password" [(ngModel)]='upwd' aria-label="upwd"><br><br>
+
+    <button (click)="login({'uname':uname,'upwd':upwd})">Login</button>
+</fieldset>
+
+<h1>{{result | json}}</h1>

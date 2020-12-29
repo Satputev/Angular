@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<p id="my_div"></p>
+<script>
+$.ajax({
+	url:"https://reqres.in/api/users?page=2",
+	method:"GET",
+	success:(res)=>{
+		console.log(res);
+		$("#my_div").append(JSON.stringify(res));
+	},
+	error:(err)=>{
+		console.log(err);
+	}
+});
+</script>
+</body>
+</html>

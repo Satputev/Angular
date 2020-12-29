@@ -1,0 +1,29 @@
+<body>
+    <form #profileData="ngForm" (ngSubmit)="register(profileData.value)">
+        <table>
+            <tr>
+                <td>User Name</td><input type="text" name="uname" ngModel></tr>
+            <tr>
+                <td>Password</td><input type="password" name="upwd" ngModel></tr>
+            <tr>
+                <td>Age</td><input type="number" name="age" ngModel></tr>
+            <tr>
+                <td>Gender</td><input type="radio" name="gender" value="male" ngModel>Male
+                <input type="radio" name="gender" value="Female" ngModel>Female</tr>
+
+            <tr ngModelGroup="addr">
+                <td>Country</td>
+                <td><select name="ucity" ngModel>
+                    <option value="India">India</option>
+                    <option value="Usa">Usa</option>
+                    <option value="Canada">Canada</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>

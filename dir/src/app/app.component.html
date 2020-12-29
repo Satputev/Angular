@@ -1,0 +1,70 @@
+<!--
+  (ngSubmit)
+
+
+
+<fieldset>
+    <legend>Login</legend>
+    <input type="text" #uname><br><br>
+    <input type="password" #upwd><br><br>
+    <button (click)="login(uname.value,upwd.value)">Login</button>
+</fieldset>
+-->
+
+<!--
+<h1 *ngFor="let x of [10,20,30,40,50];
+let i=index;
+let f=first;
+let l=last;
+let e=even;
+let o=odd">
+    {{x}}....{{i}}...{{f}}....{{l}}...{{e}}...{{o}}
+
+</h1>
+-->
+
+<!--
+<h1 *ngIf="true">hello</h1>
+<h1 *ngIf="false">welcome</h1>
+-->
+
+<!--
+<h1 *ngIf="false ;else elseBlock">True Block</h1>
+<ng-template #elseBlock>
+    <h1>FalseBlock</h1>
+
+</ng-template>
+-->
+
+<!--
+<h1 *ngIf="false;then themBlock; else elseBlock;"></h1>
+<<ng-template #themBlock>
+    <h1>Welcome to true block</h1>
+    </ng-template>
+    <<ng-template #elseBlock>
+        <h1>Welcome to false block</h1>
+        </ng-template>
+      -->
+<!--
+      <div>
+    <button class="glyphicon glyphicon-plus btn-success" (dblclick)="count=count+1"></button>
+    <button class="btn-primary">{{count}}</button>
+    <button class="glyphicon glyphicon-minus btn-success" (dblclick)="count=count-1"></button>
+
+</div>
+-->
+
+<!--
+<h1 [ngStyle]="{color:'red'}">Hello</h1>
+<h1 [ngStyle]="{color: count==0 ?'red':'green'}">hello</h1>
+<h1 *ngFor="let x of [10,20,30,40]" [ngStyle]="{color:x==10 ? 'red':'green'}">{{x}}</h1>
+-->
+
+<input type="number" [(ngModel)]="my_number">
+<br><br>
+<div [ngSwitch]="my_number">
+    <div *ngSwitchCase="10" [ngStyle]="{color:'blue'}">{{my_number}}</div>
+    <div *ngSwitchCase="20" [ngStyle]="{color:'red'}">{{my_number}}</div>
+    <div *ngSwitchCase="30" [ngStyle]="{color:'green'}">{{my_number}}</div>
+    <div *ngSwitchDefault [ngStyle]="{color:'pink'}">{{my_number}}</div>
+</div>
